@@ -112,7 +112,7 @@ namespace Shape_Area_Calculator
                             Console.WriteLine("Invalid response. Respond with a positive number.");
                         }
                     }
-                    ChoseShape = new Circle(radius);
+                    ChoseShape = new Shapes.Circle(radius);
                 }
                 else if (parsedInt == 2)
                 {
@@ -145,7 +145,7 @@ namespace Shape_Area_Calculator
                             Console.WriteLine("Invalid response. Respond with a positive number.");
                         }
                     }
-                    ChoseShape = new Rectangle(length, width);
+                    ChoseShape = new Shapes.Rectangle(length, width);
                 }
                 else if (parsedInt == 3)
                 {
@@ -163,7 +163,7 @@ namespace Shape_Area_Calculator
                             Console.WriteLine("Invalid response. Respond with a positive number.");
                         }
                     }
-                    ChoseShape = new Square(length);
+                    ChoseShape = new Shapes.Square(length);
                 }
                 validInput = false;
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shape_Area_Calculator
+namespace Shape_Area_Calculator.Shapes
 {
     internal class Square : IShape
     {
