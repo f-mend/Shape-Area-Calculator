@@ -3,7 +3,6 @@ using System.Buffers.Text;
 using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Runtime.CompilerServices;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Shape_Area_Calculator
 {
@@ -40,25 +39,27 @@ namespace Shape_Area_Calculator
             //              Implement input validation and error handling.
             //                  The calculator can only take in positive numbers and if it’s not a number have it catch the error and print to the screen that they must enter numbers only.
             //                  Make sure the error message pertains to that situation.
-
+            
 
             bool running = true;
+            int parsedInt = 0;
+            string userInput;
+            bool validInput = false;
+            IShape ChoseShape = null;
+            double length = 0;
+            double width = 0;
+            double radius = 0;
 
 
             while (running)
             {
-
-                int parsedInt = 0;
-                string userInput;
-                bool validInput = false;
-
-                IShape ChoseShape = null;
-
-                double length = 0;
-                double width = 0;
-                double radius = 0;
-
-
+                parsedInt = 0;
+                userInput = "";
+                validInput = false;
+                ChoseShape = null;
+                length = 0;
+                width = 0;
+                radius = 0;
 
                 Console.WriteLine("Area Calculator" +
                                "\nPlease select a shape to calculate" +
@@ -95,8 +96,6 @@ namespace Shape_Area_Calculator
                     }
                 }
                 validInput = false;
-
-
                 if (parsedInt == 1)
                 {
                     Console.WriteLine("Please enter the radius of your circle. Please use positive numbers.");
@@ -118,7 +117,6 @@ namespace Shape_Area_Calculator
                 else if (parsedInt == 2)
                 {
                     Console.WriteLine("Please enter the length of your rectangle. Please use positive numbers.");
-
                     while (!validInput)
                     {
                         userInput = Console.ReadLine();
@@ -134,7 +132,6 @@ namespace Shape_Area_Calculator
                     }
                     validInput = false;
                     Console.WriteLine("Please enter the width of your rectangle. Please use positive numbers.");
-
                     while (!validInput)
                     {
                         userInput = Console.ReadLine();
@@ -149,7 +146,6 @@ namespace Shape_Area_Calculator
                         }
                     }
                     ChoseShape = new Rectangle(length, width);
-
                 }
                 else if (parsedInt == 3)
                 {
@@ -210,14 +206,10 @@ namespace Shape_Area_Calculator
                         "\n1. Yes" +
                         "\n2. No");
                     }
-                    
                 }
-
             }
             Console.WriteLine("Hit any key to close.");
-            
             Console.ReadKey();
-
         }
     }
 }
